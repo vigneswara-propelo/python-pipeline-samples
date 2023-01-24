@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: python-pipeline-samples
+  annotations:
+    github.com/project-slug: Vickiee26/python-pipeline-samples
+spec:
+  type: other
+  lifecycle: unknown
+  owner: team-a
