@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: python-cluster-ip-service
+spec:
+  type: ClusterIp
+  ports:
+  - port: 5000
+    targetPort: 5000
+  selector:
+    component: web
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: web
+  template:
+    metadata:
+      labels:
+        component: web
+    spec:
+      containers:
+      - name: helloworld
+        image: vigneswara1998/python-demo:latest
+        resources:
+          requests:
+            cpu: "100m"
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 5000
