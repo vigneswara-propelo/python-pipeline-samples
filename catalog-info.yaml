@@ -3,7 +3,7 @@ kind: Component
 metadata:
   name: python-pipeline-samples
   annotations:
-    harness.io/project-url: https://app.harness.io/ng/#/account/0QvSt4c0TSiO-jLqZD3Mcg/ci/orgs/default/projects/pythondemo/dashboard
+    harness.io/project-url: https://qa.harness.io/ng/account/zEaak-FLS425IEO7OLzMUg/home/orgs/default/projects/vigneshproject/details
 spec:
   type: service
   lifecycle: experimental
