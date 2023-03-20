@@ -2,7 +2,10 @@ site_name: 'python-pipeline-samples'
 
 nav:
   - Home: index.md
-  - CreatePipelin: CreatePipeline.md
+  - CreatePipeline: CreatePipeline.md
+  - DockerPat: DockerPat.md
+  - DockerPush: DockerPush.md
+  - Integration: Integration.md
   
 plugins:
   - techdocs-core
