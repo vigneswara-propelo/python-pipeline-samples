@@ -5,6 +5,7 @@ metadata:
   annotations:
     backstage.io/techdocs-ref: dir:.
     harness.io/project-url: https://qa.harness.io/ng/account/zEaak-FLS425IEO7OLzMUg/home/orgs/default/projects/vigneshproject/details
+    gitlab.com/project-id: 43877214
 spec:
   type: service
   lifecycle: experimental
