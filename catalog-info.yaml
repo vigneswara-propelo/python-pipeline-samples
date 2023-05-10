@@ -7,6 +7,7 @@ metadata:
     harness.io/project-url: https://qa.harness.io/ng/account/zEaak-FLS425IEO7OLzMUg/home/orgs/default/projects/vigneshproject/details
     gitlab.com/project-id: '43877214'
     jira/project-key: IDP
+    circleci.com/project-slug: github/Vickiee26/python-pipeline-samples
 spec:
   type: service
   lifecycle: experimental
