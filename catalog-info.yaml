@@ -8,7 +8,7 @@ metadata:
 #     circleci.com/project-slug: github/Vickiee26/python-pipeline-samples
     gitlab.com/project-id: '43877214'
     jira/project-key: IDP
-    jenkins.io/github-folder: 'Features/todolist-buggy'
+    jenkins.io/github-folder: 'CDS-68313'
 spec:
   type: service
   lifecycle: experimental
