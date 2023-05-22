@@ -9,7 +9,7 @@ metadata:
     gitlab.com/project-id: '43877214'
     jira/project-key: IDP
     jenkins.io/github-folder: 'CDS-68313'
-    firehydrant.com/service-name: '578cf4d5-c135-4ca1-860e-96e842b0901b'
+    firehydrant.com/service-name: 'python-pipeline-samples'
 #     snyk.io/org-name: vigneswara-propelo
 #     snyk.io/project-ids: 7c7766e6-1231-4e4f-b51f-0cbd2aacb227, 4addb946-2ff4-41b7-ae71-2a5d480193ee
 spec:
