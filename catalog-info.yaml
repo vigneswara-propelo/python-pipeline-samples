@@ -10,6 +10,7 @@ metadata:
     jira/project-key: IDP
     jenkins.io/github-folder: 'CDS-68313'
     firehydrant.com/service-name: 'python-pipeline-samples'
+    backstage.io/kubernetes-id: 'python-pipeline-samples'
 #     snyk.io/org-name: vigneswara-propelo
 #     snyk.io/project-ids: 7c7766e6-1231-4e4f-b51f-0cbd2aacb227, 4addb946-2ff4-41b7-ae71-2a5d480193ee
 spec:
