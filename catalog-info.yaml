@@ -10,8 +10,8 @@ metadata:
     jira/project-key: IDP
     jenkins.io/github-folder: 'CDS-68313'
     firehydrant.com/service-name: 'python-pipeline-samples'
-    backstage.io/kubernetes-label-selector: 'app=idp-service'
-    backstage.io/kubernetes-namespace: 'harness-nextgen'
+    backstage.io/kubernetes-label-selector: 'app=idp-ui'
+    backstage.io/kubernetes-namespace: '63feee14cbf66e3c798c4bdc'
     
 #     snyk.io/org-name: vigneswara-propelo
 #     snyk.io/project-ids: 7c7766e6-1231-4e4f-b51f-0cbd2aacb227, 4addb946-2ff4-41b7-ae71-2a5d480193ee
