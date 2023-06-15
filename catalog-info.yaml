@@ -19,4 +19,4 @@ metadata:
 spec:
   type: service
   lifecycle: experimental
-  owner: team-a
+  owner: harness_account_all_users
