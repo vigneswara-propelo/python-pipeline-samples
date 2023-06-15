@@ -19,4 +19,4 @@ metadata:
 spec:
   type: service
   lifecycle: experimental
-  owner: vigneswara
+  owner: harness_account_all_users
