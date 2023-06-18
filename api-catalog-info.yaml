@@ -7,4 +7,4 @@ spec:
   lifecycle: production
   owner: harness_account_all_users
   definition:
-    $text: https://github.com/harness/harness-core/blob/develop/idp-service/contracts/openapi/v1/openapi.yaml
+    $text: https://petstore.swagger.io/v2/swagger.json
