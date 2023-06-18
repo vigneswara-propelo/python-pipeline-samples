@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: idp-Service-api
+spec:
+  type: openapi
+  lifecycle: production
+  owner: harness_account_all_users
+  definition:
+    type: url
+    target: https://github.com/harness/harness-core/blob/develop/idp-service/contracts/openapi/v1/openapi.yaml
