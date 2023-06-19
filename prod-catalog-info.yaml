@@ -1,0 +1,18 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: python-pipeline-samples-prod
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+    backstage.io/kubernetes-label-selector: 'app=idp-ui'
+    backstage.io/kubernetes-namespace: '64805447033849710a35ad34'
+    github.com/project-slug: vigneswara-propelo/python-pipeline-samples
+
+#     snyk.io/org-name: vigneswara-propelo
+#     snyk.io/project-ids: 7c7766e6-1231-4e4f-b51f-0cbd2aacb227, 4addb946-2ff4-41b7-ae71-2a5d480193ee
+spec:
+  type: service
+  lifecycle: experimental
+  owner: harness_account_all_users
+  providesApis: 
+    - idp-Service-api
