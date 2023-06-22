@@ -1,0 +1,82 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: nextjs-app
+  title: Create a Next.js app
+  description: A template to create a new Next.js app
+  tags:
+    - nextjs
+    - react
+    - javascript
+spec:
+  owner: himanshu.mishra@harness.io
+  type: service
+  parameters:
+    - title: Next.js app details
+      required:
+        - project_name
+        - github_repo
+      properties:
+        project_name:
+          title: Name of your new app
+          type: string
+          description: Unique name of the app          
+        github_repo:
+          title: Name of the GitHub repository
+          type: string
+          description: This will be the name of Repository on Github
+        isPublish:
+          title: Do you wish to publish the artificat the internal registry?
+          type: boolean
+    - title: Service Infrastructure Details
+      required:
+        - owner
+      properties:
+        cloud_provider:
+          title: Choose a cloud provider for Deployment
+          type: string
+          enum: ["GCP","AWS"]
+          default: GCP
+        db:
+          title: Choose a Database Type for the Service
+          type: string
+          enum: ["None","MySQL","Postgres","MongoDB"]
+          default: None
+        cache:
+          title: Choose a caching system for the Service
+          type: string
+          enum: ["None","Redis"]
+          default: None
+        owner:
+          title: Choose an Owner for the Service
+          type: string
+          ui:field: OwnerPicker
+          ui:options:
+            allowedKinds:
+              - Group
+        # This field is hidden but needed to authenticate the request to trigger the pipeline
+        token:
+          title: Harness Token
+          type: string
+          ui:widget: password
+          ui:field: HarnessAuthToken
+  steps:
+    - id: trigger
+      name: Creating your Next.js app
+      action: trigger:harness-custom-pipeline
+      input:
+        url: "https://stress.harness.io/ng/account/px7xd_BFRCi-pfWPYXVjvw/ci/orgs/default/projects/VigneshProject/pipelines/IDP_Service_Onboarding/pipeline-studio/?storeType=INLINE"
+        inputset:
+          project_name: ${{ parameters.project_name }}
+          github_repo: ${{ parameters.github_repo }}
+          cloud_provider: ${{ parameters.provider }}
+          db: ${{ parameters.db }}
+          cache: ${{ parameters.cache }}
+        apikey: ${{ parameters.token }}
+    # The final step is to register our new component in the catalog.
+
+
+  output:
+    links:
+      - title: Pipeline Details
+        url: ${{ steps.trigger.output.PipelineUrl }}
