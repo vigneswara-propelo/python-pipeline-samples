@@ -44,7 +44,7 @@ spec:
   type: service
   lifecycle: experimental
   owner: team-a
-  system: vigneshproject-cicd
+  system: vigneshproject
   domain: default
   providesApis: 
     - idp-Service-api
