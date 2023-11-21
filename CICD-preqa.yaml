@@ -13,7 +13,7 @@ metadata:
     harness.io/projects-stage: Operations,RELEASEBUILDS
     harness.io/ci-pipelineIds-stage: IDPUIBuildRelease,IDPAdminBuildRelease,IDPAdminCutBranch,IDP_Service,IDP_Admin
     harness.io/cd-serviceId-stage: idpservice
-  name: CICD
+  name: cicd
   description: test service
   tags:
     - java
