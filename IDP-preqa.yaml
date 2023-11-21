@@ -1,0 +1,19 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: IDP
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+    backstage.io/kubernetes-label-selector: 'app=idp-ui'
+    backstage.io/kubernetes-namespace: '64805447033849710a35ad34'
+    github.com/project-slug: vigneswara-propelo/python-pipeline-samples
+    jira/project-key: IDP
+
+spec:
+  type: service
+  lifecycle: experimental
+  owner: harness_account_all_users
+  system: vigneshproject
+  domain: default
+  providesApis: 
+    - idp-Service-api
