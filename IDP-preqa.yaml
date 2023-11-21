@@ -13,7 +13,7 @@ spec:
   type: service
   lifecycle: experimental
   owner: harness_account_all_users
-  system: vigneshproject
+  system: vigneshproject-IDP
   domain: default
   providesApis: 
     - idp-Service-api
