@@ -11,7 +11,7 @@ metadata:
 
 spec:
   type: service
-  lifecycle: experimental
+  lifecycle: experimental-test
   owner: harness_account_all_users
   system: vigneshproject
   domain: default
