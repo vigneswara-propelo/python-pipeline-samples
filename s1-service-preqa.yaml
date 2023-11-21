@@ -7,6 +7,7 @@ metadata:
     backstage.io/kubernetes-label-selector: 'app=idp-ui'
     backstage.io/kubernetes-namespace: '64805447033849710a35ad34'
     github.com/project-slug: vigneswara-propelo/python-pipeline-samples
+    jira/project-key: IDP
 
 spec:
   type: service
