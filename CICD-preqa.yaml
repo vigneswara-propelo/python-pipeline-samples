@@ -13,6 +13,7 @@ metadata:
     harness.io/projects-stage: Operations,RELEASEBUILDS
     harness.io/ci-pipelineIds-stage: IDPUIBuildRelease,IDPAdminBuildRelease,IDPAdminCutBranch,IDP_Service,IDP_Admin
     harness.io/cd-serviceId-stage: idpservice
+    backstage.io/source-location: url:https://github.com/vigneswara-propelo/python-pipeline-samples/tree/main/templates
   name: cicd
   description: test service
   tags:
