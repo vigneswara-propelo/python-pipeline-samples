@@ -13,7 +13,7 @@ metadata:
     jenkins.io/github-folder: 'CDS-68313'
     firehydrant.com/service-name: 'python-pipeline-samples'
     backstage.io/kubernetes-label-selector: 'app=idp-ui'
-    backstage.io/kubernetes-namespace: '63feee14cbf66e3c798c4bdc'
+    backstage.io/kubernetes-namespace: 'invalid'
     github.com/project-slug: vigneswara-propelo/python-pipeline-samples
     harness.io/pipelines: |
       Build: https://app.harness.io/ng/account/vpCkHKsDSxK9_KYfjCTMKA/home/orgs/default/projects/IDP_UI/pipelines/Build_IDP_UI_App/pipeline-studio/?storeType=INLINE
