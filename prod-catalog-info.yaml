@@ -8,6 +8,8 @@ metadata:
     backstage.io/kubernetes-namespace: '64805447033849710a35ad34'
     github.com/project-slug: vigneswara-propelo/python-pipeline-samples
 
+    harness.io/project-url: https://app.harness.io/ng/account/vpCkHKsDSxK9_KYfjCTMKA/admin/orgs/default/projects/IDP_UI/details
+
 #     snyk.io/org-name: vigneswara-propelo
 #     snyk.io/project-ids: 7c7766e6-1231-4e4f-b51f-0cbd2aacb227, 4addb946-2ff4-41b7-ae71-2a5d480193ee
 spec:
