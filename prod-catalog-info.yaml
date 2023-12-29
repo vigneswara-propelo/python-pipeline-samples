@@ -11,7 +11,11 @@ metadata:
     # new-annotation
     harness.io/pipelines: |
       Pipeline1: https://app.harness.io/ng/account/vpCkHKsDSxK9_KYfjCTMKA/home/orgs/default/projects/IDP_UI/pipelines/Build_IDP_UI_App/pipeline-studio?storeType=INLINE
-      Pipeline2: https://app.harness.io/ng/account/vpCkHKsDSxK9_KYfjCTMKA/all/orgs/default/projects/IDP_UI/pipelines/IDPAppDeploy/pipeline-studio?storeType=INLINE
+      Pipeline2: https://app.harness.io/ng/account/vpCkHKsDSxK9_KYfjCTMKA/home/orgs/default/projects/IDP_UI/pipelines/IDPAppDeploy/pipeline-studio?storeType=INLINE
+
+    harness.io/services: |
+      Service1: https://app.harness.io/ng/account/vpCkHKsDSxK9_KYfjCTMKA/home/orgs/default/projects/IDP_UI/services/idpserviceexp
+      Service2: https://app.harness.io/ng/account/vpCkHKsDSxK9_KYfjCTMKA/home/orgs/default/projects/IDP_UI/services/idp
     
     # old-annotation
     #harness.io/project-url: https://app.harness.io/ng/account/vpCkHKsDSxK9_KYfjCTMKA/home/orgs/default/projects/IDP_UI/details
