@@ -4,11 +4,9 @@ metadata:
   name: python-pipeline-samples
   tags:
     - python-pipeline
+  branch: develop
   annotations:
     backstage.io/techdocs-ref: dir:.
-#     harness.io/project-url: https://qa.harness.io/ng/account/zEaak-FLS425IEO7OLzMUg/home/orgs/default/projects/vigneshproject/details
-#     circleci.com/project-slug: github/vigneswara-propelo/python-pipeline-samples
-    gitlab.com/project-id: '43877214'
     jira/project-key: IDP
     jenkins.io/github-folder: 'CDS-68313'
     firehydrant.com/service-name: 'python-pipeline-samples'
@@ -23,10 +21,7 @@ metadata:
       TypeCheck: https://app.harness.io/ng/account/vpCkHKsDSxK9_KYfjCTMKA/home/orgs/default/projects/IDP_UI/pipelines/Typecheck/pipeline-studio
     grafana/dashboard-selector: "(tags @> 'prometheus' || tags @> 'blackbox')"
     npm_token: npm_adfevegevef
-    branch: develop
 
-#     snyk.io/org-name: vigneswara-propelo
-#     snyk.io/project-ids: 7c7766e6-1231-4e4f-b51f-0cbd2aacb227
 spec:
   type: service
   lifecycle: experimental
