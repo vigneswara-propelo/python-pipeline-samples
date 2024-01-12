@@ -15,6 +15,7 @@ metadata:
     backstage.io/source-location: url:https://github.com/vigneswara-propelo/python-pipeline-samples/tree/main/
     github.com/project-slug: vigneswara-propelo/python-pipeline-samples
     pagerduty.com/service-id: PT5ED69
+    harness.io/cd-serviceId: idpapp
     harness.io/pipelines: |
       Build: https://app.harness.io/ng/account/vpCkHKsDSxK9_KYfjCTMKA/home/orgs/default/projects/IDP_UI/pipelines/Build_IDP_UI_App/pipeline-studio/?storeType=INLINE
       Lint: https://app.harness.io/ng/account/vpCkHKsDSxK9_KYfjCTMKA/home/orgs/default/projects/IDP_UI/pipelines/Lint/pipeline-studio
