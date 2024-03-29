@@ -5,6 +5,11 @@ metadata:
   tags:
     - python-pipeline
   branch: develop
+  harnessData:
+    qa_versions:
+      - ng-manager_1.29
+      - pipeline-service_1.67
+    qa_fix_versions: fixVersion ~ '*ng-manager*1.29*' OR fixVersion ~ '*pipeline-service*1.67*'
   annotations:
     backstage.io/techdocs-ref: dir:.
     jira/project-key: IDP
