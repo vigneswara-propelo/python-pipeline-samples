@@ -17,6 +17,8 @@ metadata:
     github.com/project-slug: vigneswara-propelo/python-pipeline-samples
     pagerduty.com/service-id: PT5ED69
     dummy: <+account.identifier>
+    orgIdentifier: <+variable.account.orgIdentifier>
+    projectIdentifier: <+variable.account.projectIdentifier>
     harness.io/pipelines: |
       Build: https://app.harness.io/ng/account/vpCkHKsDSxK9_KYfjCTMKA/home/orgs/default/projects/IDP_UI/pipelines/Build_IDP_UI_App/pipeline-studio/?storeType=INLINE
       Lint: https://app.harness.io/ng/account/vpCkHKsDSxK9_KYfjCTMKA/home/orgs/default/projects/IDP_UI/pipelines/Lint/pipeline-studio
