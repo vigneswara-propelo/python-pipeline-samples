@@ -16,7 +16,7 @@ metadata:
     backstage.io/kubernetes-namespace: 'invalid'
     github.com/project-slug: vigneswara-propelo/python-pipeline-samples
     pagerduty.com/service-id: PT5ED69
-    dummy: <+account.identifier>
+    accountIdentifier: <+account.identifier>
     orgIdentifier: <+variable.account.orgIdentifier>
     projectIdentifier: <+variable.account.projectIdentifier>
     harness.io/pipelines: |
