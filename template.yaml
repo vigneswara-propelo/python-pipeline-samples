@@ -4,7 +4,11 @@ kind: Template
 metadata:
   name: Workflows-Quickstart
   title: Create a New GitHub Repository
-  description: Creates a new GitHub Repository 
+  description: Creates a new GitHub Repository
+  annotations:
+    accountIdentifier: <+account.identifier>
+    orgIdentifier: <+variable.account.orgIdentifier>
+    projectIdentifier: <+variable.account.projectIdentifier>
 spec:
   owner: service.owner
   type: service
