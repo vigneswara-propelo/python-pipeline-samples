@@ -35,13 +35,6 @@ metadata:
     - url: https://example.com/alert
       title: Alerts
       icon: alert
-relations:
-  - type: ownedBy
-    targetRef: group:default/harness_account_all_users
-    target:
-      kind: group
-      namespace: default
-      name: harness_account_all_users
 spec:
   type: <+account.identifier>
   lifecycle: <+variable.account.orgIdentifier> <+variable.account.projectIdentifier>
