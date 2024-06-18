@@ -5,10 +5,6 @@ metadata:
   name: Workflows-Quickstart
   title: Create a New GitHub Repository
   description: Creates a new GitHub Repository
-  annotations:
-    accountIdentifier: <+account.identifier>
-    orgIdentifier: <+variable.account.orgIdentifier>
-    projectIdentifier: <+variable.account.projectIdentifier>
 spec:
   owner: service.owner
   type: service
@@ -38,7 +34,6 @@ spec:
       name: Onboarding a New GitHub Repository
       action: trigger:harness-custom-pipeline
       input:
-        #url: "https://qa.harness.io/ng/account/zEaak-FLS425IEO7OLzMUg/module/idp-admin/orgs/default/projects/IDPtest/pipelines/IDP_Harness_steps/pipeline-studio?storeType=INLINE"
         url: "https://laxmiharness.pr2.harness.io/ng/account/<+account.identifier>/idp-admin/orgs/<+variable.account.orgIdentifier>/projects/<+variable.account.projectIdentifier>/pipelines/GitHub_Repo_Onboarding/pipeline-studio/?storeType=INLINE&stageId=IDP&sectionId=EXECUTION"
         inputset:
           github_org: ${{ parameters.github_org_name }}
