@@ -1,0 +1,48 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  namespace: default
+  annotations:
+    jira/project-key: <example-jira-project-key>
+    jira/component: <example-component>
+    jira/token-type: Bearer
+    github.com/project-slug: backstage/backstage
+    harness.io/perspective: Test
+  name: github-pull-request
+  description: pipeline build and deploy
+  tags:
+    - java
+    - secret
+  links:
+    - url: https://example.com/user
+      title: Examples Users
+      icon: user
+    - url: https://example.com/group
+      title: Example Group
+      icon: group
+    - url: https://example.com/cloud
+      title: Link with Cloud Icon
+      icon: cloud
+    - url: https://example.com/dashboard
+      title: Dashboard
+      icon: dashboard
+    - url: https://example.com/help
+      title: Support
+      icon: help
+    - url: https://example.com/web
+      title: Website
+      icon: web
+    - url: https://example.com/alert
+      title: Alerts
+      icon: alert
+relations:
+  - type: ownedBy
+    targetRef: group:default/harness_account_all_users
+    target:
+      kind: group
+      namespace: default
+      name: harness_account_all_users
+spec:
+  type: <+account.identifier>
+  lifecycle: <+variable.account.orgIdentifier> <+variable.account.projectIdentifier>
+  owner: owner
