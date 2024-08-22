@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  namespace: custom2
+  namespace: default
   annotations:
     jira/project-key: <example-jira-project-key>
     jira/component: <example-component>
