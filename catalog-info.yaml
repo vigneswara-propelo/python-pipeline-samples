@@ -28,6 +28,7 @@ metadata:
     grafana/dashboard-selector: "(tags @> 'prometheus' || tags @> 'blackbox')"
     npm_token: npm_adfevegevef
     opsgenie.com/team: test
+    opsgenie.com/component-selector: test
 
 spec:
   type: service
