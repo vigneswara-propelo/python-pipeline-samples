@@ -27,6 +27,7 @@ metadata:
       TypeCheck: https://app.harness.io/ng/account/vpCkHKsDSxK9_KYfjCTMKA/home/orgs/default/projects/IDP_UI/pipelines/Typecheck/pipeline-studio
     grafana/dashboard-selector: "(tags @> 'prometheus' || tags @> 'blackbox')"
     npm_token: npm_adfevegevef
+    opsgenie.com/team: test
 
 spec:
   type: service
