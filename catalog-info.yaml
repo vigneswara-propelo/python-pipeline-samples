@@ -5,6 +5,9 @@ metadata:
   tags:
     - python-pipeline
   branch: develop
+  additionalInfo:
+    onShoreTeamLead: Dummy
+    onShoreManager: Dummy
   harnessData:
     qa_versions:
       - idp-service_1.3
