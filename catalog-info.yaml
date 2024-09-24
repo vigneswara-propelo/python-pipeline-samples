@@ -13,6 +13,8 @@ metadata:
       - idp-service_1.3
       - idp-admin_1.3
     qa_versions_jql: fixVersion ~ '*idp-service*1.3*' OR fixVersion ~ '*idp-admin*1.3*'
+  projectIdentifier: <+variable.account.projectIdentifier>
+  orgIdentifier: <+variable.account.orgIdentifier>
   annotations:
     backstage.io/techdocs-ref: dir:.
     jira/project-key: IDP
