@@ -21,8 +21,8 @@ metadata:
     jira/project-key: IDP
     jenkins.io/github-folder: 'CDS-68313'
     firehydrant.com/service-name: 'python-pipeline-samples'
-    # backstage.io/kubernetes-label-selector: 'app=idp-ui'
-    backstage.io/kubernetes-namespace: 'harness-delegate-qa'
+    backstage.io/kubernetes-label-selector: 'harness.io/name=kubernetes-delegate'
+    # backstage.io/kubernetes-namespace: 'harness-delegate-qa'
     backstage.io/source-location: url:https://github.com/vigneswara-propelo/python-pipeline-samples/tree/main/
     github.com/project-slug: vigneswara-propelo/python-pipeline-samples
     pagerduty.com/service-id: PT5ED69
