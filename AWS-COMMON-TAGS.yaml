@@ -3,7 +3,7 @@ kind: Component
 metadata:
   name: AWS-COMMON-TAGS
   tags:
-    - AWS-COMMON-TAGS
+    - aws
   annotations:
     backstage.io/techdocs-ref: dir:.
     gitlab.com/project-id: '43877214'
