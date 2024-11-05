@@ -1,5 +1,5 @@
 apiVersion: backstage.io/v1alpha1
-kind: COMPONENT
+kind: Component
 metadata:
   name: Aws-Common-Tags
   tags:
