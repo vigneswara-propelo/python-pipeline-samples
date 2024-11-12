@@ -1,41 +1,44 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  namespace: default
-  annotations:
-    jira/project-key: <example-jira-project-key>
-    jira/component: <example-component>
-    jira/token-type: Bearer
-    github.com/project-slug: backstage/backstage
-    harness.io/perspective: Test
-  name: github-pull-request
-  description: pipeline build and deploy
+  name: PYTHON-PIPELINE-SAMPLES
   tags:
-    - java
-    - secret
-  links:
-    - url: https://example.com/user
-      title: Examples Users
-      icon: user
-    - url: https://example.com/group
-      title: Example Group
-      icon: group
-    - url: https://example.com/cloud
-      title: Link with Cloud Icon
-      icon: cloud
-    - url: https://example.com/dashboard
-      title: Dashboard
-      icon: dashboard
-    - url: https://example.com/help
-      title: Support
-      icon: help
-    - url: https://example.com/web
-      title: Website
-      icon: web
-    - url: https://example.com/alert
-      title: Alerts
-      icon: alert
+    - python-pipeline
+  branch: develop
+  customTags:
+    - tag1
+    - tag2
+  harnessData:
+    qa_versions:
+      - idp-service_1.3
+      - idp-admin_1.3
+    qa_versions_jql: fixVersion ~ '*idp-service*1.3*' OR fixVersion ~ '*idp-admin*1.3*'
+  coverage: "89.00"
+  projectIdentifier: <+variable.account.projectIdentifier>
+  orgIdentifier: <+variable.account.orgIdentifier>
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+    jira/project-key: IDP
+    jenkins.io/github-folder: 'CDS-68313'
+    firehydrant.com/service-name: 'python-pipeline-samples'
+    backstage.io/kubernetes-label-selector: 'harness.io/name=kubernetes-delegate'
+    # backstage.io/kubernetes-namespace: 'harness-delegate-qa'
+    backstage.io/source-location: url:https://github.com/vigneswara-propelo/python-pipeline-samples/tree/main/
+    github.com/project-slug: vigneswara-propelo/python-pipeline-samples
+    pagerduty.com/service-id: PT5ED69
+    harness.io/cd-serviceId: idpapp
+    harness.io/pipelines: |
+      Build: https://app.harness.io/ng/account/vpCkHKsDSxK9_KYfjCTMKA/home/orgs/default/projects/IDP_UI/pipelines/Build_IDP_UI_App/pipeline-studio/?storeType=INLINE
+      Lint: https://app.harness.io/ng/account/vpCkHKsDSxK9_KYfjCTMKA/home/orgs/default/projects/IDP_UI/pipelines/Lint/pipeline-studio
+      TypeCheck: https://app.harness.io/ng/account/vpCkHKsDSxK9_KYfjCTMKA/home/orgs/default/projects/IDP_UI/pipelines/Typecheck/pipeline-studio
+    grafana/dashboard-selector: "(tags @> 'prometheus' || tags @> 'blackbox')"
+    npm_token: npm_adfevegevef
+    opsgenie.com/team: test
+    opsgenie.com/component-selector: test
+
 spec:
-  type: <+account.identifier>
-  lifecycle: <+variable.account.orgIdentifier> <+variable.account.projectIdentifier>
-  owner: owner
+  type: service
+  lifecycle: experimental
+  owner: harness_account_all_users
+  providesApis: 
+    - idp-Service-api
