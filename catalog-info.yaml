@@ -8,6 +8,7 @@ metadata:
   customTags:
     - tag1
     - tag2
+    - tag3
   harnessData:
     qa_versions:
       - idp-service_1.3
