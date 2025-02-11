@@ -5,6 +5,8 @@ metadata:
   tags:
     - python-pipeline
   branch: develop
+  fips:
+    release: true
   customTags:
     - tag1
     - tag2
