@@ -32,6 +32,6 @@ metadata:
 spec:
   type: service
   lifecycle: experimental
-  owner: aman+pop@harness.io
+  owner: devesh.mishra@harness.io
   providesApis: 
     - idp-Service-api
