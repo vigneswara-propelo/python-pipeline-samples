@@ -32,6 +32,6 @@ metadata:
 spec:
   type: service
   lifecycle: experimental
-  owner: scimuser967048@mailinator.com
+  owner: scimuser967048
   providesApis: 
     - idp-Service-api
