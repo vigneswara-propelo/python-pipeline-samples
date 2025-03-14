@@ -32,6 +32,6 @@ metadata:
 spec:
   type: service
   lifecycle: experimental
-  owner: vigneswara.mh@gmail.com
+  owner: vigneswara.mh@harness.io
   providesApis: 
     - idp-Service-api
