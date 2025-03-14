@@ -9,6 +9,9 @@ metadata:
     - tag1
     - tag2
     - tag3
+  version:
+    major: 5
+    minor: 11
   harnessData:
     qa_versions:
       - idp-service_1.3
