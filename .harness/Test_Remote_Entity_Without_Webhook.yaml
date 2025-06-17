@@ -9,7 +9,6 @@ spec:
   ownedBy:
   - user:account/vigneswara.mh@harness.io
 metadata:
-  description: Test Remote Entity Without Webhook
   tags:
   - spotify
   - rest
