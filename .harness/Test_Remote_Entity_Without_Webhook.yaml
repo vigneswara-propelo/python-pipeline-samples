@@ -1,0 +1,15 @@
+apiVersion: harness.io/v1
+kind: Component
+type: website
+identifier: test_remote_entity_without_webhook
+name: Test Remote Entity Without Webhook
+owner: user:account/vigneswara.mh@harness.io
+spec:
+  lifecycle: production
+  ownedBy:
+  - user:account/vigneswara.mh@harness.io
+metadata:
+  description: Test Remote Entity Without Webhook
+  tags:
+  - spotify
+  - rest
