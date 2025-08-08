@@ -1,0 +1,20 @@
+apiVersion: harness.io/v1
+kind: Component
+type: service
+identifier: test_github_scorecard_sanity_github_repo
+name: Test Github Scorecard Sanity (Github Repo)
+owner: user:account/vigneswara.mh@harness.io
+spec:
+  lifecycle: production
+  sourceCode:
+    monoRepo: false
+    provider: Github
+    repoName: python-pipeline-samples
+    connectorRef: account.Vignesh_Github
+    branch: main
+    monoReposubDirectoryPath: ''
+    url: https://github.com/vigneswara-propelo/python-pipeline-samples/tree/main
+metadata:
+  description: Test Github Scorecard Sanity (Github Repo)
+  tags:
+  - github-sanity
