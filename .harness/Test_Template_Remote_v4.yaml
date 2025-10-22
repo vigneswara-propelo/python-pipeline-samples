@@ -1,7 +1,7 @@
 template:
   name: Test Template Remote
   identifier: Test_Template_Remote
-  versionLabel: v3
+  versionLabel: v4
   type: Pipeline
   projectIdentifier: IDP_TEST
   orgIdentifier: default
