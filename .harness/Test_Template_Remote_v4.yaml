@@ -14,7 +14,7 @@ template:
           description: ""
           type: CI
           spec:
-            cloneCodebase: false
+            cloneCodebase: true
             caching:
               enabled: true
               override: true
