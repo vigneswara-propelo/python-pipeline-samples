@@ -222,6 +222,10 @@ spec:
               ui:help: 'Hint: User IDs must start with a letter followed by six digits.
                 Ensure there are no duplicates.'
               pattern: ^(?:([A-Za-z]\d{6})(?!.*(?:^|,)\1(?:,|$))(?:,|$))+$
+            harness_account_id:
+              title: Harness Account ID
+              default: <+account.identifier>
+              type: string
             developerGroupName:
               title: Developer Group ID
               type: string
