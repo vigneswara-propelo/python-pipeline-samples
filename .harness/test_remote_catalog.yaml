@@ -4,6 +4,7 @@ type: component
 identifier: test_remote_catalog
 name: Test Remote Catalog
 owner: user:account/admin@harness.io
+description: Test Remote Catalog desc <+account.identifier>
 spec:
   lifecycle: production
   ownedBy:
