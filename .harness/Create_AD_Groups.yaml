@@ -1,0 +1,290 @@
+apiVersion: harness.io/v1
+kind: Workflow
+type: service
+identifier: Create_AD_Groups
+name: Create AD Groups
+owner: group:account/_account_all_users
+spec:
+  presentation:
+    customTitle: Create AD Groups
+    customSubTitle: AD Groups are used control user access to repositories in GitHub
+  output:
+    links:
+    - title: View Pipeline Execution
+      url: ${{ parameters.harnessHost }}/ng/account/${{ parameters.harnessAccountUId
+        }}/module/idp-admin/orgs/${{ parameters.harnessOrg }}/projects/VOO_SYSID_06435/pipelines/Create_AD_Groups/pipeline-studio/?storeType=REMOTE&connectorRef=account.cfg_enterprise_gh&repoName=$idp-dev-essentials-self-service&branch=${{
+        parameters.harnessBranch }}
+      icon: scaffolder
+    text:
+    - title: Created AD Groups Submitted Successfully
+      content: |
+        Your request to create AD groups has been submitted.
+
+        | Field | Value |
+        |-------|-------|
+        | SYS ID | `${{ parameters.sysId }}` |
+        | Module | `${{ parameters.moduleName }}` |
+        | Primary Approver ID | `${{ parameters.primaryApproverUserId }}` |
+        | Secondary Approver ID | `${{ parameters.secondaryApproverUserId }}` |
+        | Reviewer Group Name | `${{ parameters.reviewerGroupName }}` |
+        | Reviewer Users | `${{ parameters.reviewerUsers }}` |
+        | Developer Group Name | `${{ parameters.developerGroupName }}` |
+        | Developer Users | `${{ parameters.developerUsers }}` |
+
+        **Pipeline Execution Details:**
+        Execution ID: `${{ steps.trigger_pipeline.output.executionId }}`
+        Status: `${{ steps.trigger_pipeline.output.status }}`
+  parameters:
+  - title: AD Groups
+    required:
+    - sysId
+    - moduleName
+    - hasADGroups
+    properties:
+      formContext:
+        ui:widget: hidden
+        title: Live Form Context
+        description: DEBUG Context
+        type: string
+        ui:field: ContextViewer
+        ui:options:
+          getContextData: ${{formContext}}
+      token:
+        title: Harness Token
+        type: string
+        ui:widget: password
+        ui:field: HarnessAuthToken
+      harnessHost:
+        ui:widget: hidden
+        ui:disabled: true
+        title: Harness Host
+        type: string
+        ui:field: ContextViewer
+        ui:options:
+          getContextData: '{{formContext.harness_host}}'
+      harnessAccountUId:
+        ui:widget: hidden
+        ui:disabled: true
+        type: string
+        ui:field: ContextViewer
+        ui:backstage:
+          review:
+            show: false
+            mask: true
+        ui:options:
+          getContextData: '{{formContext.user.uid}}'
+      harnessAccountName:
+        ui:widget: hidden
+        ui:disabled: true
+        title: Harness Account User Name
+        type: string
+        ui:field: ContextViewer
+        ui:options:
+          getContextData: '{{formContext.user.name}}'
+      harnessAccountEmail:
+        ui:widget: hidden
+        ui:disabled: true
+        title: Harness Account User Email
+        type: string
+        ui:field: ContextViewer
+        ui:options:
+          getContextData: '{{formContext.user.userEmail}}'
+      harnessOrg:
+        ui:widget: hidden
+        ui:disabled: true
+        title: Harness Org
+        type: string
+        ui:field: ContextViewer
+        ui:options:
+          getContextData: '{{formContext.harness_org}}'
+      harnessBranch:
+        ui:widget: hidden
+        ui:disabled: true
+        title: Harness Branch
+        type: string
+        ui:field: ContextViewer
+        ui:options:
+          getContextData: '{{formContext.harness_branch}}'
+      sysId:
+        title: SYS ID
+        type: string
+        ui:placeholder: SYSID-12345
+        ui:help: Must start with 'SYSID-' followed by 5 digits.
+        pattern: ^SYSID-\d{5}$
+      moduleName:
+        type: string
+        ui:field: SelectFieldFromApi
+        ui:options:
+          path: proxy/platform-api/hoover-service/idp/modules
+          params:
+            sysId: '{{ parameters.sysId }}'
+          arraySelector: data
+          valueSelector: name
+          labelSelector: name
+          title: Module
+          placeholder: Choose a Module
+          setContextData:
+            moduleUuid: uuid
+            moduleDescription: description
+            hasADGroups: hasADGroups
+            reviewerGroupName: reviewerGroupName
+            developerGroupName: developerGroupName
+      moduleDescription:
+        title: Module Description
+        type: string
+        ui:disabled: true
+        ui:field: ContextViewer
+        ui:options:
+          getContextData: ${{formContext.moduleDescription}}
+      moduleUuid:
+        ui:widget: hidden
+        ui:disabled: true
+        title: Module UUID
+        type: string
+        ui:field: ContextViewer
+        ui:options:
+          getContextData: ${{formContext.moduleUuid}}
+      hasADGroups:
+        ui:widget: hidden
+        ui:disabled: true
+        title: AD Groups Status
+        type: string
+        ui:field: ContextViewer
+        ui:options:
+          getContextData: ${{formContext.hasADGroups}}
+        ui:backstage:
+          review:
+            show: false
+    dependencies:
+      hasADGroups:
+        oneOf:
+        - properties:
+            hasADGroups:
+              const: 'true'
+            textAreaMessage:
+              ui:disabled: true
+              title: AD Groups Already Exist
+              type: string
+              ui:widget: textarea
+              default: |
+                The selected module already has AD Groups configured. Please select a different module or contact support for assistance.
+            reviewerGroupName:
+              title: Reviewer Group ID
+              type: string
+              ui:disabled: true
+              ui:field: ContextViewer
+              ui:options:
+                getContextData: ${{formContext.reviewerGroupName}}
+            developerGroupName:
+              title: Developer Group ID
+              type: string
+              ui:disabled: true
+              ui:field: ContextViewer
+              ui:options:
+                getContextData: ${{formContext.developerGroupName}}
+            moduleHasADGroups:
+              title: Module Already Has AD Groups
+              type: string
+              ui:disabled: true
+              ui:widget: hidden
+          required:
+          - sysId
+          - moduleName
+          - moduleHasADGroups
+        - properties:
+            hasADGroups:
+              const: 'false'
+            primaryApproverUserId:
+              title: Primary Approver ID
+              type: string
+              pattern: ^[a-zA-Z]\d{6}$
+              ui:help: 'Hint: Must start with letter followed by six digits.'
+            secondaryApproverUserId:
+              title: Secondary Approver ID
+              type: string
+              pattern: ^[a-zA-Z]\d{6}$
+              ui:help: 'Hint: Must start with letter followed by six digits.'
+            reviewerGroupName:
+              title: Reviewer Group ID
+              type: string
+              description: Users in Reviewers List will be assigned to this group.
+              ui:disabled: true
+              ui:field: ContextViewer
+              ui:options:
+                getContextData: ${{formContext.reviewerGroupName}}
+            reviewerUsers:
+              title: Reviewers List
+              default: ''
+              type: string
+              ui:placeholder: D123456,N123456
+              description: Enter comma-separated User IDs to be assigned the Reviewer
+                group.
+              ui:help: 'Hint: User IDs must start with a letter followed by six digits.
+                Ensure there are no duplicates.'
+              pattern: ^(?:([A-Za-z]\d{6})(?!.*(?:^|,)\1(?:,|$))(?:,|$))+$
+            developerGroupName:
+              title: Developer Group ID
+              type: string
+              description: Users in Developers List will be assigned to this group.
+              ui:disabled: true
+              ui:field: ContextViewer
+              ui:options:
+                getContextData: ${{formContext.developerGroupName}}
+            developerUsers:
+              title: Developers List
+              default: ''
+              type: string
+              ui:placeholder: D123456,N123456
+              description: Enter comma-separated User IDs to be assigned the Developer
+                group.
+              ui:help: 'Hint: User IDs must start with a letter followed by six digits.
+                Ensure there are no duplicates.'
+              pattern: ^(?:([A-Za-z]\d{6})(?!.*(?:^|,)\1(?:,|$))(?:,|$))+$
+            validateUsers:
+              type: string
+              ui:field: ValidateAndFetch
+              ui:options:
+                button:
+                  title: Validate Users
+                path: proxy/platform-api/hoover-service/idp/users
+                params:
+                  provider: GITHUB
+                  userId: '{{ parameters.reviewerUsers }},{{ parameters.developerUsers
+                    }}'
+                request:
+                  method: GET
+                  headers:
+                    Content-Type: application/json
+          required:
+          - sysId
+          - moduleName
+          - primaryApproverUserId
+          - secondaryApproverUserId
+          - reviewerGroupName
+          - reviewerUsers
+          - developerGroupName
+          - developerUsers
+  steps:
+  - id: trigger
+    name: Creating your AD Groups
+    action: trigger:harness-custom-pipeline
+    input:
+      url: ${{ parameters.harnessHost }}/ng/account/${{ parameters.harnessAccountUId
+        }}/module/idp-admin/orgs/${{ parameters.harnessOrg }}/projects/VOO_SYSID_06435/pipelines/Create_AD_Groups/pipeline-studio/?storeType=REMOTE&connectorRef=account.cfg_enterprise_gh&repoName=$idp-dev-essentials-self-service&branch=${{
+        parameters.harnessBranch }}
+      apikey: ${{ parameters.token }}
+      inputset:
+        harnessAccountUId: ${{ parameters.harnessAccountUId }}
+        harnessAccountName: ${{ parameters.harnessAccountName }}
+        harnessAccountEmail: ${{ parameters.harnessAccountEmail }}
+        notificationReceiver: ${{ parameters.harnessAccountEmail }}
+        sysId: ${{ parameters.sysId }}
+        moduleName: ${{ parameters.moduleName }}
+        moduleUuid: ${{ parameters.moduleUuid }}
+        primaryApproverUserId: ${{ parameters.primaryApproverUserId}}
+        secondaryApproverUserId: ${{ parameters.secondaryApproverUserId}}
+        reviewerGroupName: ${{ parameters.reviewerGroupName }}
+        reviewerUsers: ${{ parameters.reviewerUsers }}
+        developerGroupName: ${{ parameters.developerGroupName }}
+        developerUsers: ${{ parameters.developerUsers }}
+    showOutputVariables: true
