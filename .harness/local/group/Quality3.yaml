@@ -1,0 +1,13 @@
+apiVersion: harness.io/v1
+kind: Group
+type: team
+identifier: Quality3
+name: Quality3
+orgIdentifier: default
+projectIdentifier: SampleTest
+spec:
+  parent: group:account.default.SampleTest/engineering
+  members: []
+metadata:
+  tags:
+  - team
